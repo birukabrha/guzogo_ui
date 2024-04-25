@@ -14,8 +14,7 @@ class FlightPicker extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      // color: Colors.blue,
+    return SizedBox(
       width: 150,
       height: 100,
       child: Column(
@@ -43,7 +42,7 @@ class FlightPicker extends StatelessWidget {
             maxLines: 2,
             style: const TextStyle(
               color: Colors.white,
-              fontSize: 9,
+              fontSize: 10,
               wordSpacing: 0,
               letterSpacing: .1,
             ),

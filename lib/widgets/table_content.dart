@@ -11,6 +11,7 @@ class TableContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // ignore: no_leading_underscores_for_local_identifiers
     BookController _bookController = Get.find();
     return Obx(
       () => Table(

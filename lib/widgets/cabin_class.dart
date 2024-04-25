@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:guzogo_ui/controllers/book_controller.dart';
 
@@ -8,6 +7,7 @@ class CabinSelect extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // ignore: no_leading_underscores_for_local_identifiers
     BookController _bookController = Get.find();
     return Obx(
       () => Container(
