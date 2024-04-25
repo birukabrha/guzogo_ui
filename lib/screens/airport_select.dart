@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:guzogo_ui/controllers/book_controller.dart';
+import 'package:guzogo_ui/controllers/search_controller.dart';
 import 'package:guzogo_ui/data.dart';
 import 'package:guzogo_ui/widgets/airport_list.dart';
 
@@ -12,7 +13,7 @@ class AirportSelect extends StatelessWidget {
 
   final bool isFrom;
   final BookController _bookController = Get.find();
-  final SearchController _searchController = Get.put(SearchController());
+  final MySearchController _searchController = Get.put(MySearchController());
 
   @override
   Widget build(BuildContext context) {
@@ -123,18 +124,5 @@ class AirportSelect extends StatelessWidget {
       ),
       // ),
     );
-  }
-}
-
-class SearchController extends GetxController {
-  var fullList = airports.obs;
-  var filteredList = [].obs;
-  var searchString = ''.obs;
-
-  void filterAirport(searchString) {
-    filteredList.value = fullList
-        .where((element) =>
-            element.name.toLowerCase().contains(searchString.toLowerCase()))
-        .toList();
   }
 }
