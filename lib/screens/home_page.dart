@@ -17,7 +17,7 @@ class HomePage extends StatelessWidget {
 
     return SingleChildScrollView(
       child: SizedBox(
-        height: MediaQuery.of(context).size.height - 120,
+        height: MediaQuery.of(context).size.height - 100,
         child: Column(
           children: [
             SizedBox(

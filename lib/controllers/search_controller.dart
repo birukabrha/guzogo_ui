@@ -2,14 +2,22 @@ import 'package:get/get.dart';
 import 'package:guzogo_ui/data.dart';
 
 class MySearchController extends GetxController {
-  var fullList = airports.obs;
-  var filteredList = [].obs;
+  Rx<bool> isTrue = true.obs;
+  RxList<dynamic> fullList = airports.obs;
+  RxList<dynamic> filteredList = [].obs;
   var searchString = ''.obs;
 
-  void filterAirport(searchString) {
-    filteredList.value = fullList
-        .where((element) =>
-            element.name.toLowerCase().contains(searchString.toLowerCase()))
+  void printTest() {
+    print('Filtered list = ${filteredList.value}');
+    print('Search String = ${searchString.value}');
+  }
+
+  void filterAirport(String searchString) {
+    var temp = fullList.value..removeAt(0);
+    filteredList.value = temp
+        .where((element) => element['airport_name']
+            .toLowerCase()
+            .contains(searchString.toLowerCase()))
         .toList();
   }
 }

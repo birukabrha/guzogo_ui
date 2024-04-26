@@ -21,7 +21,7 @@ class MyDatePicker extends StatelessWidget {
     ];
     return Obx(
       () => Container(
-        height: 500,
+        height: 555,
         color: Colors.white,
         child: Column(
           children: [
@@ -45,6 +45,7 @@ class MyDatePicker extends StatelessWidget {
               ],
             ),
             Container(
+              height: 334,
               color: Colors.white,
               child: _bookController.selectedOption.value == 2
                   ? CalendarDatePicker2(
@@ -71,7 +72,8 @@ class MyDatePicker extends StatelessWidget {
                           lastDate: DateTime(2026)),
                       value: _multiTripRange),
             ),
-            SizedBox(
+            Container(
+              margin: const EdgeInsets.only(bottom: 10),
               width: MediaQuery.of(context).size.width * .92,
               child: ElevatedButton(
                 onPressed: () {
